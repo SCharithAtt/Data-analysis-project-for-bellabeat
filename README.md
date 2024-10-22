@@ -1,5 +1,11 @@
 # Bellabeat Data Analysis Case Study
 
+[The HTML Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.html)
+[The PDF Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final%20Report%20PDF.pdf)
+[The R Markdown file](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.Rmd)
+
+[The complete R Script](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Project%20Script.R)
+
 ## Introduction
 This repository contains the analysis of smart device usage data for Bellabeat, a wellness technology company. The project aims to uncover trends in device usage and provide actionable insights to inform Bellabeat's marketing strategy.
 
@@ -15,11 +21,11 @@ This repository contains the analysis of smart device usage data for Bellabeat, 
 5. **Share:** Create visualizations and reports to communicate findings.
 6. **Act:** Provide recommendations based on analysis.
 
-## [The HTML Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.html)
-##[The PDF Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final%20Report%20PDF.pdf)
-##[The R Markdown file](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.Rmd)
+[The HTML Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.html)
+[The PDF Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final%20Report%20PDF.pdf)
+[The R Markdown file](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.Rmd)
 
-##[The complete R Script](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Project%20Script.R)
+[The complete R Script](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Project%20Script.R)
 
 
 
