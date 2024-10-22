@@ -1,0 +1,621 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={How can a fitness technology company play it smart?},
+  pdfauthor={Senura Charith Attanayake},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{How can a fitness technology company play it smart?}
+\author{Senura Charith Attanayake}
+\date{2024-05-22}
+
+\begin{document}
+\maketitle
+
+\hypertarget{business-task}{%
+\section{Business Task}\label{business-task}}
+
+Bellabeat, a high-tech manufacturer of health-focused products for
+women, wants to unlock new growth opportunities by analyzing smart
+device data. The key business task is to analyze usage patterns from
+non-Bellabeat smart devices, derive insights on consumer behavior, and
+apply these findings to improve Bellabeat's products. The goal is to
+inform Bellabeat's marketing strategy with data-driven insights and
+provide high-level recommendations to the executive team on how to
+optimize their product offerings and market positioning.
+
+\hypertarget{key-questions-driving-the-analysis}{%
+\paragraph{Key questions driving the
+analysis:}\label{key-questions-driving-the-analysis}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  What are the emerging trends in smart device usage?
+\item
+  How can these trends be applied to Bellabeat's customer base?
+\item
+  What marketing strategies can be recommended based on these trends to
+  increase Bellabeat's market presence?
+\end{enumerate}
+
+\hypertarget{the-data}{%
+\section{The Data}\label{the-data}}
+
+The data used for this analysis comes from a public dataset on smart
+device usage, specifically the Fitbit Fitness Tracker data. This dataset
+includes daily activity logs, heart rate, sleep monitoring, and other
+personal health metrics from 30 Fitbit users who consented to share
+their data.
+
+\hypertarget{data-sources}{%
+\subsubsection{Data sources:}\label{data-sources}}
+
+Fitbit Fitness Tracker Data: A
+\href{https://www.kaggle.com/datasets/arashnic/fitbit}{dataset from
+Kaggle} containing detailed information on physical activity, heart
+rate, and sleep patterns.
+
+\hypertarget{data-structure}{%
+\subsubsection{Data Structure:}\label{data-structure}}
+
+\begin{itemize}
+\tightlist
+\item
+  dailyActivity\_merged.csv: Daily step counts, distance, calories
+  burned, and activity levels.
+\item
+  dailyCalories\_merged.csv: Caloric expenditure data on a daily basis.
+\item
+  dailySteps\_merged.csv: Number of steps taken per day.
+\item
+  heartRate\_seconds\_merged.csv: Heart rate data at minute-level
+  granularity.
+\item
+  sleepDay\_merged.csv: Data on sleep duration and sleep efficiency.
+\end{itemize}
+
+The dataset allows for detailed exploration of physical activity, sleep
+patterns, and heart rate, providing rich insights into how users
+interact with their devices and health data.
+
+\hypertarget{limitations}{%
+\subsubsection{Limitations:}\label{limitations}}
+
+\textbf{It should be noted that this dataset used has significant
+limitations as this was based on only 30 consenting participants. This
+is not remotely close to conducting a comprehensive analysis. However,
+Based on this data we can get a brief idea about certain patterns and
+trends which may serve as a starting point for further assessment.}
+
+\textbf{For certain dataset only about 8 participants provided
+comprehensive details, This is not enough to get a thorough idea about
+user behavior}
+
+\hypertarget{data-preprocessing}{%
+\section{Data preprocessing}\label{data-preprocessing}}
+
+In this preprocessing step, we perform multiple actions to clean and
+prepare the Fitbit dataset for analysis. Here's a breakdown of what
+happens during this stage:
+
+\hypertarget{library-loading}{%
+\subsubsection{Library Loading:}\label{library-loading}}
+
+The tidyverse library is loaded, which includes essential packages for
+data manipulation, such as ggplot2, dplyr, and readr.
+
+\hypertarget{data-loading}{%
+\subsubsection{Data Loading:}\label{data-loading}}
+
+Various Fitbit CSV datasets are imported using read\_csv(). Each dataset
+contains different information related to users' daily activities, heart
+rates, sleep patterns, etc. These datasets are assigned to variables
+like dailyActivity, dailyCalories, and heartRateSeconds, allowing us to
+work with them in subsequent analysis steps. Missing Value Detection:
+
+\begin{itemize}
+\tightlist
+\item
+  The code then checks for missing values across all the imported
+  datasets * using colSums(is.na()). This step helps in identifying any
+  gaps in the data, which is critical for maintaining data quality in
+  the analysis. In particular, the weightLogInfo dataset has missing
+  values in the ``Fat'' column, which are addressed by removing the
+  entire column using select(-Fat). Exploratory Data Summarization:
+\end{itemize}
+
+The skimr and janitor packages are used to generate a clean summary of
+the datasets. Functions like skim\_without\_charts() and summary()
+provide essential information such as the data's distribution, mean, and
+other statistical details for each column. This ensures that we have a
+solid understanding of the structure and content of the datasets before
+diving into deeper analysis. \#\#\# Summary Statistics:
+
+Summary statistics are printed for each dataset, providing a quick
+snapshot of key metrics such as the number of entries, minimum, maximum,
+and average values for numeric fields. This helps identify patterns and
+potential anomalies in the data. Date and Time Handling:
+
+The lubridate package is used to handle date-time formats. For example,
+the Time column in heartRateSeconds is converted to a POSIXct format to
+facilitate time-based analysis, enabling accurate plotting of heart rate
+over time.
+
+\hypertarget{data-transformation}{%
+\subsubsection{Data Transformation:}\label{data-transformation}}
+
+The mutate() function from dplyr is used to calculate new columns based
+on existing data. For example, in dailyActivity, the total active
+minutes are calculated, and activity levels are converted into
+percentages. This transformation makes it easier to interpret how users
+spend their time (e.g., sedentary vs.~very active). Data Cleaning:
+
+\begin{itemize}
+\tightlist
+\item
+  Cleaning actions include removing unnecessary columns (like the
+  ``Fat'' column from weightLogInfo) and correcting data types (such as
+  converting date columns to proper date formats). These steps ensure
+  that the data is ready for effective analysis without errors or
+  inconsistencies.*
+\end{itemize}
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+This analysis aims to explore and visualize various aspects of Fitbit
+data, including daily activities, heart rates, sleep patterns, and
+weight logs. The goal is to derive meaningful insights that can help
+users understand their health and activity levels.
+
+\hypertarget{we-start-by-importing-the-libraries}{%
+\subsubsection{We start by importing the
+Libraries}\label{we-start-by-importing-the-libraries}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load Required Packages}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/Senura/AppData/Local/R/win-library/4.3'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## package 'tidyverse' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Senura\AppData\Local\Temp\RtmpIf7wpt\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'tidyverse' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.4     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.1
+## v ggplot2   3.4.4     v tibble    3.2.1
+## v lubridate 1.9.3     v tidyr     1.3.0
+## v purrr     1.0.2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/Senura/AppData/Local/R/win-library/4.3'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## package 'here' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Senura\AppData\Local\Temp\RtmpIf7wpt\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(here)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'here' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## here() starts at C:/Users/Senura/Projects/Bellabeat Data Analysis/Data-analysis-project-for-bellabeat
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"skimr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/Senura/AppData/Local/R/win-library/4.3'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## package 'skimr' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Senura\AppData\Local\Temp\RtmpIf7wpt\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(skimr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'skimr' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"janitor"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/Senura/AppData/Local/R/win-library/4.3'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## package 'janitor' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Senura\AppData\Local\Temp\RtmpIf7wpt\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(janitor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'janitor' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'janitor'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+\end{verbatim}
+
+\hypertarget{each-csv-data-set-is-stored-in-a-variable}{%
+\subsubsection{Each CSV data set is stored in a
+variable}\label{each-csv-data-set-is-stored-in-a-variable}}
+
+\hypertarget{check-for-missing-values-in-each-dataset}{%
+\subsubsection{Check for missing values in each
+dataset}\label{check-for-missing-values-in-each-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check for missing values}
+\NormalTok{missing\_values }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(}\FunctionTok{list}\NormalTok{(dailyActivity, dailyCalories, dailyIntensities, dailySteps,}
+\NormalTok{                               heartRateSeconds, hourlyCalories, hourlyIntensities,}
+\NormalTok{                               hourlySteps, minuteCaloriesNarrow, minuteCaloriesWide,}
+\NormalTok{                               minuteIntensitiesNarrow, minuteIntensitiesWide,}
+\NormalTok{                               minuteMETsNarrow, minuteSleep, minuteStepsNarrow,}
+\NormalTok{                               minuteStepsWide, sleepDaily, weightLogInfo), }
+                         \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(x)))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{we-look-at-the-summary-statistics-for-each-dataset}{%
+\subsubsection{We look at the summary statistics for each
+dataset}\label{we-look-at-the-summary-statistics-for-each-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check for missing values}
+\CommentTok{\# Summary statistics for all datasets}
+\FunctionTok{lapply}\NormalTok{(}\FunctionTok{list}\NormalTok{(dailyActivity, dailyCalories, dailyIntensities, dailySteps,}
+\NormalTok{            heartRateSeconds, hourlyCalories, hourlyIntensities,}
+\NormalTok{            hourlySteps, minuteCaloriesNarrow, minuteCaloriesWide,}
+\NormalTok{            minuteIntensitiesNarrow, minuteIntensitiesWide,}
+\NormalTok{            minuteMETsNarrow, minuteSleep, minuteStepsNarrow,}
+\NormalTok{            minuteStepsWide, sleepDaily, weightLogInfo), summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{daily-activity-analysis}{%
+\subsection{Daily Activity Analysis}\label{daily-activity-analysis}}
+
+\hypertarget{average-calories-burned}{%
+\subsubsection{Average Calories Burned}\label{average-calories-burned}}
+
+We calculate the average calories burned per user and visualize the
+results.
+
+\includegraphics{Final_files/figure-latex/avgcalories-1.pdf}
+\includegraphics{Final_files/figure-latex/avgcalories-2.pdf}
+\emph{Explain the significance of calories burned and its implications
+for user health.}
+
+\includegraphics{Final_files/figure-latex/activitypercentages -1.pdf}
+\emph{Discuss how different activity levels affect overall health and
+well-being.}
+
+\hypertarget{weight-log-analysis}{%
+\subsection{Weight Log Analysis}\label{weight-log-analysis}}
+
+\hypertarget{bmi-calculation}{%
+\subsubsection{BMI Calculation}\label{bmi-calculation}}
+
+We compute BMI categories based on the earliest records.
+
+\includegraphics{Final_files/figure-latex/bmichart -1.pdf}
+\emph{Interpret the BMI categories and their health implications.}
+
+\hypertarget{heart-rate-analysis}{%
+\subsection{Heart Rate Analysis}\label{heart-rate-analysis}}
+
+\hypertarget{mean-and-variance-of-heart-rate}{%
+\subsubsection{Mean and Variance of Heart
+Rate}\label{mean-and-variance-of-heart-rate}}
+
+We analyze heart rate data, focusing on the mean and variance.
+
+\includegraphics{Final_files/figure-latex/heartrate-1.pdf} \emph{Discuss
+the importance of heart rate monitoring in assessing cardiovascular
+health.}
+
+\hypertarget{variance-of-heart-rate}{%
+\subsubsection{Variance of Heart Rate}\label{variance-of-heart-rate}}
+
+\includegraphics{Final_files/figure-latex/heartratevariance-1.pdf}
+*Elaborate on the significance of heart rate variance for health
+monitoring.
+
+\hypertarget{sleep-analysis}{%
+\subsection{Sleep Analysis}\label{sleep-analysis}}
+
+\hypertarget{sleep-patterns}{%
+\subsubsection{Sleep Patterns}\label{sleep-patterns}}
+
+We evaluate the total time in bed versus the time spent sleeping.
+
+\includegraphics{Final_files/figure-latex/sleep-1.pdf}
+\includegraphics{Final_files/figure-latex/sleep-2.pdf} \emph{Elaborate
+on the impact of sleep quality on overall health and productivity.}
+
+\hypertarget{summary-of-analysis}{%
+\section{Summary of Analysis}\label{summary-of-analysis}}
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+*The provided dataset is not enough for a complete analysis.
+
+*As for the analyzed user group the majority has a healthy calorie
+consumption ( Calories burned ). When comparing with a lower limit of
+1600 calories and upper limit of 2200 calories as suggested in
+\href{https://www.healthline.com/health/fitness-exercise/how-many-calories-do-i-burn-a-day\#:~:text=You\%20burn\%20calories\%20daily\%20when,your\%20body\%20and\%20activity\%20levels.}{this
+healthline article} , The majority of the participating females burn a
+healthy amount of calories.
+
+*Based on the activity level analysis of each participant, The Sedentary
+time spent is significantly higher than time spent doing light Activity,
+Intense activities and time spent being fairly active. The time spent
+being fairly active is seen to be higher than time spend engaging in
+Light Activities or being Very Active.
+
+*The BMI graph contains the Earliest BMI's recorded for each recorded
+user. This serves to give an idea of what sort of a market starts to use
+wearable fitness technology. 50\% of the assessed group are overweight.
+And only 30\% of the users carry a healthy BMI. If we were to assume
+that the earliest recorded dates for each user indicate their earliest
+days using the Fitness trackers, This is an indicator that an overweight
+demographic are more inclined to use fitness technology.
+
+*The mean heartrates for the Users indicate that the assessed user group
+has healthy heartrates. All of the users have heartrates within the
+healthy limit (60 - 100).
+
+*The heartrate variance chart shows that 1/14 individuals display a
+significant variance from an accepted healthy heartrate of 80 BPM.
+
+*The sleep partterns chart indicates that most participants spend
+minimal awake minutes in bed. And some users display comparatively
+larger awake minutes in bed. This can be an indicator of participants
+having trouble falling asleep or participants staying in bed for long
+before getting off the bed. The analysis found that the average time
+spent awake in bed was 8.5\%. Although this is a small number, When
+comparing with sleep hours this is significant and features to help
+minimize this percentage would benefit.
+
+\hypertarget{recommendations-based-on-the-analysis}{%
+\section{Recommendations based on the
+Analysis}\label{recommendations-based-on-the-analysis}}
+
+\hypertarget{future-recommendations}{%
+\subsection{Future Recommendations}\label{future-recommendations}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Enhanced Data Collection}: Suggest improvements in data
+  collection for more robust analysis.
+\item
+  \textbf{User Engagement}: Encourage users to engage with their data
+  regularly.
+\item
+  \textbf{Features to help achieve less sedentary minutes}: The
+  Bellabeat app could provide reminders to take a walk etc. And help
+  customers achieve better activity.
+\item
+  \textbf{Features to track calorie intake}: The bellabeat app can
+  accomodate features to track user's calorie intake. The analysis
+  indicated that the majority of the females have a healthy calorie
+  consumption but it also indicated the majority to be overweight. This
+  can be caused by an excess calorie intake and features to track it
+  could be beneficial.
+\item
+  \textbf{Marketing and features catered to groups hoping to lose
+  weight}: The study indicated that the majority are overweight and
+  indicated that overweight individuals have a special interest in
+  products similar to bellabeat. Therefore, targeted marketing and
+  features beneficial to them would increase sales.
+\item
+  \textbf{Features to minimize awake minutes in bed}: The analysis
+  indicated that there is still a significant proportion of minutes
+  spent awake in bed among users. This could indicate trouble falling
+  asleep or trouble getting up/ Lack of energy to get up. Bellabeat can
+  implement features in their products to tackle these two scenarios.
+  Such as features to help with stress management or features to track
+  healthy macro and micro nutrient intakes similar to ``MyFitnessPal''
+  and thereby providing suggestions to users. This would drive more
+  customers to experience the benefits to real problems they face.
+\end{enumerate}
+
+\emph{In conclusion, this comprehensive analysis of Fitbit data offers
+valuable insights into user behavior, ranging from daily activity
+patterns to heart rate variability and sleep quality. By carefully
+preprocessing, cleaning, and analyzing the data, we are better equipped
+to inform Bellabeat's marketing strategy and product development. The
+insights derived from this study have the potential to guide future
+innovations and enhance user engagement with Bellabeat's health-focused
+products. Thank you for following along on this data journey, and I look
+forward to exploring further opportunities for growth and optimization.}
+
+\textbf{Senura Charith Attanayake}
+
+\end{document}
