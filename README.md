@@ -15,16 +15,11 @@ This repository contains the analysis of smart device usage data for Bellabeat, 
 5. **Share:** Create visualizations and reports to communicate findings.
 6. **Act:** Provide recommendations based on analysis.
 
-## Results
-Key findings and high-level recommendations for Bellabeat's marketing strategy.
+## [The HTML Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.html)
+##[The PDF Version of the Final Report](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final%20Report%20PDF.pdf)
+##[The R Markdown file](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Final.Rmd)
 
-## How to Run
-1. Clone the repository: `git clone https://github.com/yourusername/bellabeat-data-analysis.git`
-2. Navigate to the project directory: `cd bellabeat-data-analysis`
-3. Install dependencies 
-4. Run the analysis scripts.
+##[The complete R Script](https://github.com/SCharithAtt/Data-analysis-project-for-bellabeat/blob/main/Project%20Script.R)
 
-## Dependencies
-- Tidyverse
 
 
